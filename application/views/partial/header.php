@@ -20,30 +20,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Greenary</a>
+      
+      <a class="navbar-brand" href="<?php echo base_url('index.php/Welcome'); ?>">Greenary</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Home</a></li>
+        <li ><a href="#">Orders<span class="sr-only">(current)</span></a></li>
+        <!--<li><a href="#">Home</a></li>-->
         
       </ul>
       <form class="navbar-form navbar-left">
         
       </form>
       <ul class="nav navbar-nav navbar-right">
-		<li><a href="<?php echo base_url('index.php/Welcome/login'); ?>">Log In</a></li>
-		<li ><a href="<?php echo base_url('index.php/Welcome/register'); ?>">Register<span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
+      <?php if(!(current_url()== base_url('index.php/Welcome/login'))) : ?>
+    <li><a href="<?php echo base_url('index.php/Welcome/login'); ?>">Log In</a></li> 
+    <?php endif; ?>
+    <?php if(!(current_url()== base_url('index.php/Welcome/register'))) : ?>
+    <li ><a href="<?php echo base_url('index.php/Welcome/register'); ?>">Register<span class="sr-only">(current)</span></a></li>
+    <?php endif; ?>
+        <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kusal <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Log out</a></li>
             
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

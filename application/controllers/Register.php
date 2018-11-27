@@ -3,7 +3,9 @@ class Register extends CI_Controller{
     public function RegisterUser(){
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[user.email]');
+        $this->form_validation->set_rules('phone', 'Phone');
+        $this->form_validation->set_rules('address', 'Address');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[customer.email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|matches[password]');
 

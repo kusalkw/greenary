@@ -17,8 +17,16 @@
     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" name="lname">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="exampleInputEmail1">Email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Address</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" name="lname">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Phone</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" name="lname">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
@@ -28,8 +36,10 @@
     <label for="exampleInputPassword1">Confirm Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="cpassword">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-
+  <button type="submit" class="btn btn-success">Submit</button>
+<br>
+<br>
+<b></b>
 <?php echo form_close(); ?>  
 </div>
 <?php include 'partial/footer.php'?>

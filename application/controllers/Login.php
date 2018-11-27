@@ -15,7 +15,21 @@ class Login extends CI_Controller{
                     $result=$this->Model_user->loginUser(); 
                     
                     if($result!=false){
+                        $user_data=array(
+                            'user_id'=>$result->customerid,
+                            'fname'=>$result->fname,
+                            'lname'=>$result->lname,
+                            'phone'=>$result->phone,
+                            'address'=>$result->address,
+                            'email'=>$result->email,
 
+                            'loggedin'=>TRUE
+
+                        );
+                        $this->session->set_userdata($user_data);
+                        print_r($_SESSION);
+                        $this->session->set_flashdata('Welcome','Welcome back');
+                            redirect ('Admin/index');
 
                     }else{
                         $this->session->set_flashdata('error','Wrong email and password');
@@ -27,4 +41,17 @@ class Login extends CI_Controller{
 
             }
 
-}
+
+
+public function LogoutUser(){
+
+    $this->session->unset_userdata('user_id');
+    $this->session->unset_userdata('fname');
+    $this->session->unset_userdata('lname');
+    $this->session->unset_userdata('phone');
+    $this->session->unset_userdata('address');
+    $this->session->unset_userdata('email');
+    $this->session->unset_userdata('loggedin');
+    redirect('Welcome/login');
+}}
+?>
